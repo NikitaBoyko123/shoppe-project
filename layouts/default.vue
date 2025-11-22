@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <header>
+  <div class="container">
+    <header></header>
 
-    </header>
     <main>
       <slot />
     </main>
-    <footer>
 
-    </footer>
+    <footer><</footer>
   </div>
 </template>
+
+<style scoped></style>
