@@ -5,6 +5,9 @@ import tsParser from "@typescript-eslint/parser";
 import vue from "eslint-plugin-vue";
 import vueParser from "vue-eslint-parser";
 import globals from "globals";
+import { createConfigForNuxt } from "@nuxt/eslint-config/flat";
+
+const nuxtConfig = await createConfigForNuxt();
 
 export default [
   js.configs.recommended,
@@ -93,17 +96,13 @@ export default [
     },
   },
 
-  (module.exports = {
-    env: {
-      node: true,
-      browser: true,
-      es2021: true,
-    },
-    extends: ["@nuxt/eslint-config"],
+  ...nuxtConfig,
+
+  {
     rules: {
       "no-undef": "off",
     },
-  }),
+  },
 
   prettier,
 ];

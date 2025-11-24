@@ -1,7 +1,12 @@
-export const useApiFetch = <T>(url: string, options: any = {}) => {
+import type { UseFetchOptions } from "#app";
+
+export const useApiFetch = (
+  url: string,
+  options: UseFetchOptions<unknown> = {}
+) => {
   const config = useRuntimeConfig();
 
-  const fetchOptions = {
+  const fetchOptions: UseFetchOptions<unknown> = {
     ...options,
   };
 
@@ -9,11 +14,10 @@ export const useApiFetch = <T>(url: string, options: any = {}) => {
     fetchOptions.baseURL = config.public.apiBase;
   }
 
-  return useFetch<T>(url, {
-    ...fetchOptions,
-    headers: {
-      "Content-Type": "application/json",
-      ...options.headers,
-    },
-  });
+  fetchOptions.headers = {
+    "Content-Type": "application/json",
+    ...options.headers,
+  };
+
+  return useFetch<unknown>(url, fetchOptions);
 };

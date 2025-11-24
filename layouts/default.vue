@@ -6,8 +6,12 @@
       <slot />
     </main>
 
-    <footer><</footer>
+    <footer></footer>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  min-height: 100vh;
+}
+</style>
