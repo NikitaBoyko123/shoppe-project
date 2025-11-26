@@ -19,5 +19,7 @@ export const useApiFetch = <T = unknown>(
     ...options.headers,
   };
 
-  return useFetch(url, fetchOptions as any) as ReturnType<typeof useFetch<T>>;
+  return useFetch(url, fetchOptions as UseFetchOptions<T>) as ReturnType<
+    typeof useFetch<T>
+  >;
 };
