@@ -1,12 +1,12 @@
 import type { UseFetchOptions } from "#app";
 
-export const useApiFetch = (
+export const useApiFetch = <T = unknown>(
   url: string,
-  options: UseFetchOptions<unknown> = {}
+  options: UseFetchOptions<T> = {}
 ) => {
   const config = useRuntimeConfig();
 
-  const fetchOptions: UseFetchOptions<unknown> = {
+  const fetchOptions: UseFetchOptions<T> = {
     ...options,
   };
 
@@ -19,5 +19,5 @@ export const useApiFetch = (
     ...options.headers,
   };
 
-  return useFetch<unknown>(url, fetchOptions);
+  return useFetch(url, fetchOptions as any) as ReturnType<typeof useFetch<T>>;
 };
