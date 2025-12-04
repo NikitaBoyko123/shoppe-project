@@ -17,6 +17,7 @@ logs
 .DS_Store
 .fleet
 .idea
+.husky
 
 # Local env files
 .env
