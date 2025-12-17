@@ -1,3 +1,5 @@
+import svgLoader from "vite-svg-loader";
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-11-18",
 
@@ -38,5 +40,17 @@ export default defineNuxtConfig({
         },
       },
     },
+    vue: {
+      template: {
+        compilerOptions: {
+          isCustomElement: () => false,
+        },
+      },
+    },
+    plugins: [
+      svgLoader({
+        defaultImport: "component",
+      }),
+    ],
   },
 });

@@ -1,17 +1,9 @@
 <template>
-  <div class="container">
-    <header></header>
-
-    <main>
+  <div>
+    <BaseHeader />
+    <div class="container">
       <slot />
-    </main>
-
-    <footer></footer>
+    </div>
+    <footer class="footer" />
   </div>
 </template>
-
-<style scoped>
-.container {
-  min-height: 100vh;
-}
-</style>
