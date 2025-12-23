@@ -1,34 +1,21 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import SearchIcon from "@/assets/icons/find.svg";
-
-const model = defineModel<string>({ default: "" });
 
 defineProps<{
   placeholder?: string;
   autoFocus?: boolean;
 }>();
 
-const emit = defineEmits<{
-  (e: "submit", v: string): void;
-}>();
-
-const inputEl = ref<HTMLInputElement | null>(null);
-
-function onSubmit(e: Event) {
-  e.preventDefault();
-  emit("submit", model.value);
-}
+const model = defineModel<string>({ default: "" });
 </script>
 
 <template>
-  <form class="si" role="search" @submit="onSubmit">
+  <form class="si" role="search">
     <span class="si-icon">
       <SearchIcon />
     </span>
 
     <input
-      ref="inputEl"
       v-model="model"
       class="si-input"
       type="search"
@@ -69,13 +56,17 @@ function onSubmit(e: Event) {
   position: absolute;
   top: 50%;
   left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: $gray-600;
   pointer-events: none;
   transform: translateY(-50%);
 
   :deep(svg) {
-    width: 12px;
-    height: 12px;
+    display: block;
+    width: 16px;
+    height: 16px;
   }
 }
 </style>

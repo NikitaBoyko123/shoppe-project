@@ -16,20 +16,16 @@ watch(
     }
   }
 );
-if (import.meta.client) {
-  const $breakpoints = useBreakpointsTyped();
+const $breakpoints = useBreakpointsTyped();
 
-  watchEffect(() => {
-    if ($breakpoints.m.value) {
-      model.value = false;
-    }
-  });
-}
+watchEffect(() => {
+  if ($breakpoints.m.value) {
+    model.value = false;
+  }
+});
 
 onUnmounted(() => {
-  if (import.meta.client) {
-    document.body.style.overflow = "";
-  }
+  document.body.style.overflow = "";
 });
 </script>
 
@@ -63,6 +59,11 @@ onUnmounted(() => {
   height: 100dvh;
   background: $color-white;
   box-shadow: -8px 0 24px rgb(0 0 0 / 10%);
+
+  @media (width < 475px) {
+    max-width: 100%;
+    box-shadow: none;
+  }
 }
 
 .drawer__scroll {
@@ -79,7 +80,7 @@ onUnmounted(() => {
 
 .drawer-slide-enter-active,
 .drawer-slide-leave-active {
-  transition: transform 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 

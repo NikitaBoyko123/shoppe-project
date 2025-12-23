@@ -8,6 +8,11 @@ interface Breakpoints {
   xxl: Ref<boolean>;
 }
 
+const BP_M = 768;
+const BP_L = 1024;
+const BP_XL = 1280;
+const BP_XXL = 1440;
+
 export default defineNuxtPlugin((nuxtApp) => {
   const m = ref(false);
   const l = ref(false);
@@ -17,11 +22,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   const breakpoints: Breakpoints = { m, l, xl, xxl };
 
   if (import.meta.client) {
-    const BP_M = 768,
-      BP_L = 1024,
-      BP_XL = 1280,
-      BP_XXL = 1440;
-
     const onResize = () => {
       const w = window.innerWidth;
       m.value = w >= BP_M;

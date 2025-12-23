@@ -77,47 +77,83 @@ const handleClose = () => emit("close");
   gap: 24px;
   width: 320px;
   min-height: 100%;
-  padding: 16px;
+  padding: 16px 12px;
+  overflow: visible;
   background: $color-white;
   border-radius: 10px;
 
+  @media (width < 475px) {
+    width: 100%;
+    padding: 12px;
+    border-radius: 0;
+  }
+
   &__top {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    min-width: 0;
     height: 36px;
     padding: 0;
     margin-top: 4px;
+    overflow: visible;
+
+    @media (width < 475px) {
+      gap: 4px;
+    }
   }
 
   &__logo {
     display: inline-flex;
-    flex: 0 0 99px;
     flex-shrink: 0;
     align-items: center;
-    min-width: 99px;
+    overflow: visible;
+  }
 
-    &-icon {
+  &__logo-icon {
+    display: block;
+    flex-shrink: 0;
+    width: 90px;
+    height: 24px;
+    overflow: visible;
+
+    svg {
       display: block;
-      width: 99px;
-      height: 36px;
-      max-height: 36px;
-      object-fit: contain;
+      width: 90px;
+      max-width: 100%;
+      height: 24px;
+      max-height: 100%;
+    }
+
+    @media (width < 475px) {
+      width: 80px;
+      height: 20px;
+
+      svg {
+        width: 80px;
+        height: 20px;
+      }
     }
   }
 
   &__top-actions {
     display: flex;
-    flex: 0 0 auto;
     flex-shrink: 0;
     gap: 12px;
     align-items: center;
     margin-left: auto;
+
+    @media (width < 475px) {
+      gap: 15px;
+      margin-right: 20px;
+      margin-left: auto;
+    }
   }
 
   &__search {
+    width: 95%;
     height: 32px;
     margin-top: 8px;
   }
@@ -169,21 +205,28 @@ const handleClose = () => emit("close");
     text-decoration: none;
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
   }
 }
 
 .icon {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   color: $color-black;
   background: none;
   border: none;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
