@@ -12,31 +12,27 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <button
-    class="icon icon--burger"
-    type="button"
+  <BaseButton
+    variant="ghost"
+    class="mobile-menu-button"
     aria-label="Toggle menu"
     @click="emit('toggle')"
   >
     <component :is="isOpen ? CloseIcon : BurgerIcon" />
-  </button>
+  </BaseButton>
 </template>
 
 <style scoped lang="scss">
-.icon {
+.mobile-menu-button {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 24px;
   height: 24px;
-  padding: 0;
-  color: $color-black;
-  cursor: pointer;
-  background: none;
-  border: none;
 
-  svg {
-    display: block;
+  @media (min-width: $breakpoints-m) {
+    display: none;
+  }
+
+  :deep(svg) {
     width: 100%;
     height: 100%;
   }

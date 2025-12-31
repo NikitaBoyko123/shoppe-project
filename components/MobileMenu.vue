@@ -25,17 +25,17 @@ const handleClose = () => emit("close");
       </NuxtLink>
 
       <div class="mobile-menu__top-actions">
-        <button class="icon" type="button" aria-label="cart">
+        <BaseButton variant="ghost" class="icon" aria-label="cart">
           <CartIcon />
-        </button>
-        <button
+        </BaseButton>
+        <BaseButton
+          variant="ghost"
           class="icon"
-          type="button"
           aria-label="close menu"
           @click="handleClose"
         >
           <CloseIcon />
-        </button>
+        </BaseButton>
       </div>
     </div>
 
@@ -72,18 +72,18 @@ const handleClose = () => emit("close");
 
 <style scoped lang="scss">
 .mobile-menu {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 320px;
+  width: 100%;
   min-height: 100%;
   padding: 16px 12px;
-  overflow: visible;
+  overflow: hidden;
   background: $color-white;
   border-radius: 10px;
 
-  @media (width < 475px) {
-    width: 100%;
+  @media (width < $breakpoints-s) {
     padding: 12px;
     border-radius: 0;
   }
@@ -100,7 +100,7 @@ const handleClose = () => emit("close");
     margin-top: 4px;
     overflow: visible;
 
-    @media (width < 475px) {
+    @media (width < $breakpoints-s) {
       gap: 4px;
     }
   }
@@ -127,7 +127,7 @@ const handleClose = () => emit("close");
       max-height: 100%;
     }
 
-    @media (width < 475px) {
+    @media (width < $breakpoints-s) {
       width: 80px;
       height: 20px;
 
@@ -145,17 +145,23 @@ const handleClose = () => emit("close");
     align-items: center;
     margin-left: auto;
 
-    @media (width < 475px) {
+    @media (width < $breakpoints-s) {
       gap: 15px;
-      margin-right: 20px;
       margin-left: auto;
     }
   }
 
   &__search {
-    width: 95%;
+    box-sizing: border-box;
+    width: 100%;
     height: 32px;
     margin-top: 8px;
+
+    @media (min-width: $breakpoints-m) {
+      width: calc(100% + 24px);
+      margin-right: -12px;
+      margin-left: -12px;
+    }
   }
 
   &__nav {
@@ -184,9 +190,16 @@ const handleClose = () => emit("close");
   }
 
   &__divider {
+    box-sizing: border-box;
     width: 100%;
     border: none;
     border-top: 1px solid $gray-250;
+
+    @media (min-width: $breakpoints-m) {
+      width: calc(100% + 24px);
+      margin-right: -12px;
+      margin-left: -12px;
+    }
   }
 
   &__actions {
@@ -212,19 +225,11 @@ const handleClose = () => emit("close");
 }
 
 .icon {
-  display: inline-flex;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
   width: 24px;
   height: 24px;
-  padding: 0;
-  color: $color-black;
-  background: none;
-  border: none;
 
-  svg {
-    display: block;
+  :deep(svg) {
     width: 100%;
     height: 100%;
   }

@@ -42,7 +42,7 @@ const links = linksDesktop.concat(linksMobile);
         <DesktopMenu :links="linksDesktop" />
 
         <div class="header__actions">
-          <MobileMenuButton :is-open="isMenuOpen" @toggle="toggleMenu" />
+          <MobileMenuButtons :is-open="isMenuOpen" @toggle="toggleMenu" />
         </div>
       </div>
     </div>
@@ -102,39 +102,6 @@ const links = linksDesktop.concat(linksMobile);
 
     @media (min-width: $breakpoints-m) {
       gap: 24px;
-    }
-
-    .icon {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      padding: 0;
-      color: $color-black;
-      cursor: pointer;
-      background: none;
-      border: none;
-
-      :deep(svg) {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .icon--burger {
-      display: inline-flex;
-    }
-
-    @media (min-width: $breakpoints-m) {
-      .icon {
-        display: inline-flex;
-      }
-
-      .icon--burger {
-        display: none;
-      }
     }
   }
 }

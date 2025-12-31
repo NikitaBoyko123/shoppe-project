@@ -6,6 +6,12 @@ import UserIcon from "@/assets/icons/user.svg?component";
 defineProps<{
   links: { label: string; to: string }[];
 }>();
+
+const icons = [
+  { component: FindIcon, class: "icon--search", ariaLabel: "search" },
+  { component: CartIcon, class: "icon--cart", ariaLabel: "cart" },
+  { component: UserIcon, class: "icon--account", ariaLabel: "account" },
+];
 </script>
 
 <template>
@@ -22,15 +28,15 @@ defineProps<{
       <span class="desktop-menu__separator"></span>
 
       <div class="desktop-menu__icons">
-        <button class="icon icon--search" type="button" aria-label="search">
-          <FindIcon />
-        </button>
-        <button class="icon icon--cart" type="button" aria-label="cart">
-          <CartIcon />
-        </button>
-        <button class="icon icon--account" type="button" aria-label="account">
-          <UserIcon />
-        </button>
+        <BaseButton
+          v-for="icon in icons"
+          :key="icon.ariaLabel"
+          variant="ghost"
+          :class="['icon', icon.class]"
+          :aria-label="icon.ariaLabel"
+        >
+          <component :is="icon.component" />
+        </BaseButton>
       </div>
     </div>
   </div>
@@ -101,21 +107,23 @@ defineProps<{
 }
 
 .icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 24px;
   height: 24px;
-  padding: 0;
-  color: $color-black;
-  cursor: pointer;
-  background: none;
-  border: none;
 
-  svg {
-    display: block;
+  :deep(svg) {
     width: 100%;
     height: 100%;
+  }
+
+  &.icon--search,
+  &.icon--account {
+    :deep(svg path:nth-child(2)) {
+      display: none;
+    }
+  }
+
+  &.icon--cart {
+    transform: scale(1.05);
   }
 }
 </style>
