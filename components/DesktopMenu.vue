@@ -32,10 +32,10 @@ const icons = [
           v-for="icon in icons"
           :key="icon.ariaLabel"
           variant="ghost"
-          :class="['icon', icon.class]"
+          class="icon"
           :aria-label="icon.ariaLabel"
         >
-          <component :is="icon.component" />
+          <component :is="icon.component" :class="icon.class" />
         </BaseButton>
       </div>
     </div>
@@ -87,7 +87,7 @@ const icons = [
   &__actions {
     display: flex;
     flex-shrink: 0;
-    gap: 24px;
+    gap: 48px;
     align-items: center;
   }
 
@@ -114,16 +114,14 @@ const icons = [
     width: 100%;
     height: 100%;
   }
+}
 
-  &.icon--search,
-  &.icon--account {
-    :deep(svg path:nth-child(2)) {
-      display: none;
-    }
-  }
+:deep(.icon--search path:nth-child(2)),
+:deep(.icon--account path:nth-child(2)) {
+  display: none;
+}
 
-  &.icon--cart {
-    transform: scale(1.05);
-  }
+:deep(.icon--cart) {
+  transform: scale(1.05);
 }
 </style>

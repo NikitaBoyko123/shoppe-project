@@ -32,7 +32,7 @@ const links = linksDesktop.concat(linksMobile);
 </script>
 
 <template>
-  <header class="header">
+  <header class="header container">
     <div class="header__content">
       <NuxtLink to="/" class="logo">
         <ShoppeIcon class="logo__icon" />
@@ -67,17 +67,12 @@ const links = linksDesktop.concat(linksMobile);
     display: flex;
     gap: 4px;
     align-items: center;
-    max-width: 1248px;
     min-height: 42px;
-    padding: 0 4px;
-    margin: 0 auto;
     overflow: visible;
 
     @media (min-width: $breakpoints-m) {
       gap: 48px;
       height: 42px;
-      padding-right: 96px;
-      padding-left: 96px;
     }
   }
 

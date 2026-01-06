@@ -4,7 +4,7 @@ withDefaults(
     variant?: "primary" | "secondary" | "ghost";
   }>(),
   {
-    variant: "ghost",
+    variant: "primary",
   }
 );
 </script>

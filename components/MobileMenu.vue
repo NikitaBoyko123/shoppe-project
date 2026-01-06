@@ -90,7 +90,7 @@ const handleClose = () => emit("close");
 
   &__top {
     display: flex;
-    gap: 8px;
+    gap: 16px;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
@@ -101,7 +101,7 @@ const handleClose = () => emit("close");
     overflow: visible;
 
     @media (width < $breakpoints-s) {
-      gap: 4px;
+      gap: 12px;
     }
   }
 
@@ -141,12 +141,12 @@ const handleClose = () => emit("close");
   &__top-actions {
     display: flex;
     flex-shrink: 0;
-    gap: 12px;
+    gap: 20px;
     align-items: center;
     margin-left: auto;
 
     @media (width < $breakpoints-s) {
-      gap: 15px;
+      gap: 20px;
       margin-left: auto;
     }
   }
