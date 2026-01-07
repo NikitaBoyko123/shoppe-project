@@ -74,6 +74,11 @@ const links = linksDesktop.concat(linksMobile);
       gap: 48px;
       height: 42px;
     }
+
+    @media (min-width: $breakpoints-xxl) {
+      gap: 64px;
+      height: 48px;
+    }
   }
 
   &__right {
@@ -86,6 +91,10 @@ const links = linksDesktop.concat(linksMobile);
 
     @media (min-width: $breakpoints-m) {
       gap: 48px;
+    }
+
+    @media (min-width: $breakpoints-xxl) {
+      gap: 64px;
     }
   }
 
@@ -131,6 +140,16 @@ const links = linksDesktop.concat(linksMobile);
       svg {
         width: 129px;
         height: 27px;
+      }
+    }
+
+    @media (min-width: $breakpoints-xxl) {
+      width: 160px;
+      height: 34px;
+
+      svg {
+        width: 160px;
+        height: 34px;
       }
     }
   }

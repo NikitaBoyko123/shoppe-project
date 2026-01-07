@@ -69,6 +69,11 @@ const icons = [
     font-weight: 400;
     list-style: none;
 
+    @media (min-width: $breakpoints-xxl) {
+      gap: 80px;
+      font-size: 18px;
+    }
+
     a {
       color: $color-black;
       text-decoration: none;
@@ -89,6 +94,10 @@ const icons = [
     flex-shrink: 0;
     gap: 48px;
     align-items: center;
+
+    @media (min-width: $breakpoints-xxl) {
+      gap: 64px;
+    }
   }
 
   &__separator {
@@ -103,12 +112,21 @@ const icons = [
     flex-shrink: 0;
     gap: 39px;
     align-items: center;
+
+    @media (min-width: $breakpoints-xxl) {
+      gap: 48px;
+    }
   }
 }
 
 .icon {
   width: 24px;
   height: 24px;
+
+  @media (min-width: $breakpoints-xxl) {
+    width: 28px;
+    height: 28px;
+  }
 
   :deep(svg) {
     width: 100%;
