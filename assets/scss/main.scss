@@ -1,5 +1,4 @@
-@import "variables";
-@import "components/container";
+@use "components/container";
 
 body {
   font-family: $font-dm-sans;
