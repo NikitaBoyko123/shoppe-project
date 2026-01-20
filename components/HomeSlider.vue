@@ -12,7 +12,7 @@ const modules = [Navigation, Pagination, Autoplay]
 
 <template>
   <div class="home-slider">
-    <swiper
+    <Swiper
       :modules="modules"
       :slides-per-view="1"
       :space-between="0"
@@ -25,7 +25,7 @@ const modules = [Navigation, Pagination, Autoplay]
       :pagination="{ clickable: true }"
       class="home-slider__swiper"
     >
-      <swiper-slide
+      <SwiperSlide
         v-for="(slide, index) in slides"
         :key="index"
         class="home-slider__slide"
@@ -35,8 +35,8 @@ const modules = [Navigation, Pagination, Autoplay]
           :alt="`Slide ${index + 1}`"
           class="home-slider__image"
         />
-      </swiper-slide>
-    </swiper>
+      </SwiperSlide>
+    </Swiper>
   </div>
 </template>
 
