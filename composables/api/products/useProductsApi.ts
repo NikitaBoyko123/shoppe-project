@@ -1,5 +1,11 @@
 import type { Product } from "~/types/api";
 
-export const useGetAllProducts = () => {
-  return useApiFetch<Product[]>("/products");
+export const useGetAllProducts = (options: { limit?: number } = {}) => {
+  const { limit } = options
+
+  return useApiFetch<Product[]>("/products", {
+    params: {
+      limit,
+    },
+  });
 };
