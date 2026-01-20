@@ -42,11 +42,11 @@ const modules = [Navigation, Pagination, Autoplay]
 
 <style scoped lang="scss">
 .home-slider {
+  position: relative;
+  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
-  position: relative;
   margin-top: 16px;
-  box-sizing: border-box;
   overflow: hidden;
 
   &__swiper {
@@ -57,34 +57,34 @@ const modules = [Navigation, Pagination, Autoplay]
   }
 
   &__slide {
-    width: 100%;
-    max-width: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
   }
 
   &__image {
+    box-sizing: border-box;
+    display: block;
     width: 100%;
     max-width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     border-radius: 16px;
-    box-sizing: border-box;
   }
 }
 
 :deep(.swiper-button-next),
 :deep(.swiper-button-prev) {
-  color: $color-white;
-  background-color: rgba($color-black, 0.5);
   width: 40px;
   height: 40px;
+  color: $color-white;
+  background-color: rgba($color-black, 0.5);
   border-radius: 50%;
 
-  &:after {
+  &::after {
     font-size: 16px;
     font-weight: 700;
   }
@@ -100,25 +100,25 @@ const modules = [Navigation, Pagination, Autoplay]
 }
 
 :deep(.swiper-pagination-bullet-active) {
-  opacity: 1;
   background-color: $color-white;
+  opacity: 1;
 }
 
 :deep(.swiper-wrapper) {
-  max-width: 100%;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 :deep(.swiper-container) {
+  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
 :deep(.swiper-slide) {
+  box-sizing: border-box;
   width: 100% !important;
   max-width: 100% !important;
-  box-sizing: border-box;
 }
 </style>
