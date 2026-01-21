@@ -27,7 +27,7 @@ const modules = [Navigation, Pagination, Autoplay]
     >
       <SwiperSlide
         v-for="(slide, index) in slides"
-        :key="index"
+        :key="slide"
         class="home-slider__slide"
       >
         <img
@@ -35,7 +35,12 @@ const modules = [Navigation, Pagination, Autoplay]
           :alt="`Slide ${index + 1}`"
           class="home-slider__image"
         />
-      </SwiperSlide>
+        <div class="home-slider__content">
+          <h2 class="home-slider__title">Gold big hoops</h2>
+          <p class="home-slider__price">$ 68,00</p>
+          <BaseButton class="home-slider__button">View Product</BaseButton>
+        </div>
+        </SwiperSlide>
     </Swiper>
   </div>
 </template>
@@ -57,6 +62,7 @@ const modules = [Navigation, Pagination, Autoplay]
   }
 
   &__slide {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -73,6 +79,44 @@ const modules = [Navigation, Pagination, Autoplay]
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
+  }
+
+  &__content {
+    position: absolute;
+    top: 226px;
+    left: 39px;
+    z-index: 1;
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-white;
+    font-family: $font-dm-sans;
+    font-size: 33px;
+    font-weight: 500;
+    line-height: 43px;
+    letter-spacing: 0%;
+  }
+
+  &__price {
+    margin: 0;
+    margin-top: 16px;
+    color: $color-white;
+    font-family: $font-dm-sans;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0%;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    width: 193px;
+    height: 62px;
+    padding: 16px 8px;
+    margin-top: 48px;
+    border: 2px solid $color-white;
+    border-radius: 6px;
   }
 }
 

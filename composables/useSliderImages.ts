@@ -1,15 +1,15 @@
 export const useSliderImages = () => {
     const slides = [
-        'https://fastly.picsum.photos/id/783/1248/646.jpg?hmac=WWyx0LzkV2tTT5RrpXA8a8wrnlYlCWIxVxOsfp3QAF4',
-        'https://fastly.picsum.photos/id/1035/1248/646.jpg?hmac=zOY_T8Icr4jO9--u33TCNpo3nigc7D8QylkKhqGb5B8',
-        'https://fastly.picsum.photos/id/389/1248/646.jpg?hmac=fhtLe5yPucD0KZ4ys7Og8E3Bgj2ZHbEi6FYxpLUt4eo',
-        'https://fastly.picsum.photos/id/499/1248/646.jpg?hmac=GQ_ygc-BrIfBKqIN8VQ0ZaStFvA1yTYeFR64rEyAMI4',
-        'https://fastly.picsum.photos/id/770/1248/646.jpg?hmac=DkIiLNZ26SFrAToDUgN5Meo2y8sRLFTvWSs4-jS3W6k',
-        'https://fastly.picsum.photos/id/693/1248/646.jpg?hmac=mj9eAJv9K6WlHznwx24GBDBzQz7DOV31aufkQJwJT6o',
-        'https://fastly.picsum.photos/id/342/1248/646.jpg?hmac=JsjwRiKITEz_nWKygO6LSNbz4i8WQC2AQmkkhZsm6Z8',
-        'https://fastly.picsum.photos/id/1053/1248/646.jpg?hmac=kc1jtlmlSTwe1G8imeHyRoO4IJplGVQvOab77dwjX8Y',
-        'https://fastly.picsum.photos/id/892/1248/646.jpg?hmac=1uStEBn5dolJhbYm2UOK2jD5g7BDpwazkyYNo6T_S3Y',
-        'https://fastly.picsum.photos/id/582/1248/646.jpg?hmac=5-vUx6IBKHl56mOMSD-spcJRiDplhEiUwzsWqQr4KeM',
+        'https://fastly.picsum.photos/id/663/1440/1000.jpg?hmac=etc__ubGl6r66hqO6MaB0jRi6HED3d4hea82Beu-xGA',
+        'https://fastly.picsum.photos/id/498/1440/1000.jpg?hmac=WcEb5LZHlXDErLSYd0ryjYk3kN3fP7V5aaznCzA8BBQ',
+        'https://fastly.picsum.photos/id/998/1440/1000.jpg?hmac=gyEEtPTwp0WeS9Gjo6kBKDl3rC8sccBIa2VKHfqXloQ',
+        'https://fastly.picsum.photos/id/121/1440/1000.jpg?hmac=UKpRZR_-4vy-HnqO2OXLCBW_nzUDOw8iTbi8xd-CDOk',
+        'https://fastly.picsum.photos/id/677/1440/1000.jpg?hmac=ZivfEeF3hj8URZismCG5KYUrRt1cbMH-kHh31kuJYdI',
+        'https://fastly.picsum.photos/id/764/1440/1000.jpg?hmac=IeewGmlfFpuf-JTyl9RkSnW2nXiwF1d8VVFeusoJ9uA',
+        'https://fastly.picsum.photos/id/787/1440/1000.jpg?hmac=5yRGZEHrHAhfGAlY1tsBBSsMazUfXV9epJz-r4Sbi4M',
+        'https://fastly.picsum.photos/id/183/1440/1000.jpg?hmac=OfNxc7k4RFLywFmvLsnSwiPoVTsF39-LfcwFD7nIm-U',
+        'https://fastly.picsum.photos/id/10/1440/1000.jpg?hmac=RLrfjfE2zwTYBA7eADFwELoahwfUbweT6zBPJMpI_SU',
+        'https://fastly.picsum.photos/id/251/1440/1000.jpg?hmac=bbDoUMP2_7W7Yg6zRC032csmNuOmO-WMtpEonGamwuk',
     ]
 
     return {
