@@ -40,7 +40,7 @@ const modules = [Navigation, Pagination, Autoplay]
           <p class="home-slider__price">$ 68,00</p>
           <BaseButton class="home-slider__button">View Product</BaseButton>
         </div>
-        </SwiperSlide>
+      </SwiperSlide>
     </Swiper>
   </div>
 </template>
@@ -74,8 +74,8 @@ const modules = [Navigation, Pagination, Autoplay]
   &__image {
     box-sizing: border-box;
     display: block;
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
@@ -115,8 +115,23 @@ const modules = [Navigation, Pagination, Autoplay]
     height: 62px;
     padding: 16px 8px;
     margin-top: 48px;
+    background-color: transparent !important;
     border: 2px solid $color-white;
     border-radius: 6px;
+    font-family: $font-dm-sans;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $color-white;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    &:active {
+      background-color: transparent !important;
+    }
   }
 }
 
@@ -139,12 +154,18 @@ const modules = [Navigation, Pagination, Autoplay]
 }
 
 :deep(.swiper-pagination-bullet) {
+  width: 9.14px;
+  height: 9.14px;
   background-color: $color-white;
-  opacity: 0.5;
+  opacity: 1;
+  border: 1px solid transparent;
 }
 
 :deep(.swiper-pagination-bullet-active) {
-  background-color: $color-white;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid $color-white;
   opacity: 1;
 }
 
@@ -162,6 +183,12 @@ const modules = [Navigation, Pagination, Autoplay]
 
 :deep(.swiper-slide) {
   box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden;
+}
+
+:deep(.swiper-slide img) {
   width: 100% !important;
   max-width: 100% !important;
 }
