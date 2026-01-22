@@ -90,22 +90,22 @@ const modules = [Navigation, Pagination, Autoplay]
 
   &__title {
     margin: 0;
-    color: $color-white;
     font-family: $font-dm-sans;
     font-size: 33px;
     font-weight: 500;
     line-height: 43px;
+    color: $color-white;
     letter-spacing: 0%;
   }
 
   &__price {
     margin: 0;
     margin-top: 16px;
-    color: $color-white;
     font-family: $font-dm-sans;
     font-size: 26px;
     font-weight: 400;
     line-height: 35px;
+    color: $color-white;
     letter-spacing: 0%;
   }
 
@@ -115,15 +115,15 @@ const modules = [Navigation, Pagination, Autoplay]
     height: 62px;
     padding: 16px 8px;
     margin-top: 48px;
-    background-color: transparent !important;
-    border: 2px solid $color-white;
-    border-radius: 6px;
     font-family: $font-dm-sans;
     font-size: 20px;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: 0%;
     color: $color-white;
+    letter-spacing: 0%;
+    background-color: transparent !important;
+    border: 2px solid $color-white;
+    border-radius: 6px;
 
     &:hover {
       background-color: transparent !important;
@@ -157,8 +157,8 @@ const modules = [Navigation, Pagination, Autoplay]
   width: 9.14px;
   height: 9.14px;
   background-color: $color-white;
-  opacity: 1;
   border: 1px solid transparent;
+  opacity: 1;
 }
 
 :deep(.swiper-pagination-bullet-active) {
