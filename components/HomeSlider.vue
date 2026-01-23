@@ -55,11 +55,11 @@ const modules = [Navigation, Pagination, Autoplay]
   overflow: hidden;
 
   &__swiper {
+    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     height: 100%;
     overflow: hidden;
-    box-sizing: border-box;
   }
 
   &__slide {
@@ -186,9 +186,9 @@ const modules = [Navigation, Pagination, Autoplay]
 
 :deep(.swiper-slide) {
   box-sizing: border-box;
+  flex-shrink: 0;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  flex-shrink: 0;
 }
 </style>

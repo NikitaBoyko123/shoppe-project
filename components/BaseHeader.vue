@@ -65,8 +65,8 @@ const links = linksDesktop.concat(linksMobile);
 
   &__content {
     display: flex;
-    width: 100%;
     gap: 4px;
+    width: 100%;
     align-items: center;
     min-height: 42px;
     overflow: visible;
