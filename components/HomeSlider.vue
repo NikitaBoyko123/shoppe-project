@@ -59,6 +59,7 @@ const modules = [Navigation, Pagination, Autoplay]
     max-width: 100%;
     height: 100%;
     overflow: hidden;
+    box-sizing: border-box;
   }
 
   &__slide {
@@ -69,13 +70,14 @@ const modules = [Navigation, Pagination, Autoplay]
     justify-content: center;
     width: 100%;
     max-width: 100%;
+    overflow: hidden;
   }
 
   &__image {
     box-sizing: border-box;
     display: block;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 16px;
@@ -171,6 +173,7 @@ const modules = [Navigation, Pagination, Autoplay]
 
 :deep(.swiper-wrapper) {
   box-sizing: border-box;
+  width: 100%;
   max-width: 100%;
 }
 
@@ -183,13 +186,9 @@ const modules = [Navigation, Pagination, Autoplay]
 
 :deep(.swiper-slide) {
   box-sizing: border-box;
-  width: 100% !important;
-  max-width: 100% !important;
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
-}
-
-:deep(.swiper-slide img) {
-  width: 100% !important;
-  max-width: 100% !important;
+  flex-shrink: 0;
 }
 </style>
