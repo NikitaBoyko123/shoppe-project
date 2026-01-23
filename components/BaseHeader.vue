@@ -67,6 +67,7 @@ const links = linksDesktop.concat(linksMobile);
     display: flex;
     gap: 4px;
     align-items: center;
+    width: 100%;
     min-height: 42px;
     overflow: visible;
 
@@ -105,7 +106,7 @@ const links = linksDesktop.concat(linksMobile);
     align-items: center;
 
     @media (min-width: $breakpoints-m) {
-      gap: 24px;
+      display: none;
     }
   }
 }
