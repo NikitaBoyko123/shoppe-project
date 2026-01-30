@@ -83,7 +83,7 @@ const modules = [Pagination, Autoplay]
     max-width: 100%;
     overflow: hidden;
 
-    @media (max-width: 474px) {
+    @media (width <= 474px) {
       overflow: visible;
     }
   }
@@ -117,25 +117,18 @@ const modules = [Pagination, Autoplay]
     left: 39px;
     z-index: 1;
 
-    @media (max-width: 474px) {
+    @media (width <= 474px) {
       top: 235px !important;
       left: 8px !important;
       overflow: visible;
     }
 
-    @media (min-width: 475px) and (max-width: 767px) {
+    @media (width >= 475px) and (width <= 767px) {
       top: 120px;
       left: 20px;
     }
   }
 
-  &__slide {
-    position: relative;
-
-    @media (max-width: 474px) {
-      position: relative;
-    }
-  }
 
   &__title {
     margin: 0;
@@ -144,18 +137,18 @@ const modules = [Pagination, Autoplay]
     font-weight: 500;
     line-height: 43px;
     color: $color-white;
-    letter-spacing: 0%;
     text-transform: capitalize;
+    letter-spacing: 0%;
 
     @media (width < $breakpoints-m) {
       font-size: 24px;
       line-height: 32px;
     }
 
-    @media (max-width: 474px) {
+    @media (width <= 474px) {
       font-size: 20px;
-      line-height: 26px;
       font-weight: 500;
+      line-height: 26px;
       text-transform: capitalize;
     }
   }
@@ -176,11 +169,11 @@ const modules = [Pagination, Autoplay]
       line-height: 28px;
     }
 
-    @media (max-width: 474px) {
+    @media (width <= 474px) {
       margin-top: 3px;
       font-size: 14px;
-      line-height: 22px;
       font-weight: 400;
+      line-height: 22px;
     }
   }
 
@@ -195,8 +188,8 @@ const modules = [Pagination, Autoplay]
     font-weight: 700;
     line-height: 100%;
     color: $color-white;
-    letter-spacing: 0%;
     text-transform: uppercase;
+    letter-spacing: 0%;
     background-color: transparent !important;
     border: 2px solid $color-white;
     border-radius: 6px;
@@ -209,10 +202,11 @@ const modules = [Pagination, Autoplay]
       font-size: 16px;
     }
 
-    @media (max-width: 474px) {
+    @media (width <= 474px) {
       position: absolute;
       top: 61px;
       left: 0;
+      z-index: 10;
       width: 92px;
       height: 32px;
       padding: 0;
@@ -224,7 +218,6 @@ const modules = [Pagination, Autoplay]
       line-height: 20px;
       border: 1px solid $color-white;
       border-radius: 4px;
-      z-index: 10;
     }
 
     &:hover {
@@ -256,7 +249,7 @@ const modules = [Pagination, Autoplay]
     margin-right: 0;
   }
 
-  @media (max-width: 474px) {
+  @media (width <= 474px) {
     margin-right: 6px;
 
     &:last-child {
@@ -268,17 +261,17 @@ const modules = [Pagination, Autoplay]
 :deep(.swiper-pagination-bullet:not(.swiper-pagination-bullet-active)) {
   width: 9.14px;
   height: 9.14px;
-  transform: translateY(1.145px);
   background-color: $color-white;
   border: 1px solid transparent;
   opacity: 1;
+  transform: translateY(1.145px);
 
   @media (width < $breakpoints-m) {
     width: 7px;
     height: 7px;
   }
 
-  @media (max-width: 474px) {
+  @media (width <= 474px) {
     width: 4px;
     height: 4px;
     transform: none;
@@ -298,22 +291,13 @@ const modules = [Pagination, Autoplay]
     height: 12px;
   }
 
-  @media (max-width: 474px) {
+  @media (width <= 474px) {
     width: 7px;
     height: 7px;
     border: 0.75px solid $color-white;
   }
 }
 
-:deep(.swiper-pagination-bullet) {
-  @media (width < $breakpoints-m) {
-    margin-right: 10px;
-  }
-
-  @media (width < $breakpoints-s) {
-    margin-right: 8px;
-  }
-}
 
 :deep(.swiper-wrapper) {
   box-sizing: border-box;
