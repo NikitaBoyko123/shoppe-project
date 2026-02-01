@@ -3,8 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
-
-const { slides } = useSliderImages()
+import { sliderImages as slides } from '~/constants/sliderImages'
 
 const modules = [Pagination, Autoplay]
 </script>
@@ -116,6 +115,10 @@ const modules = [Pagination, Autoplay]
     top: 226px;
     left: 39px;
     z-index: 1;
+
+    @media (width < $breakpoints-l) {
+      top: 160px;
+    }
 
     @media (width <= 474px) {
       top: 235px !important;
@@ -249,7 +252,7 @@ const modules = [Pagination, Autoplay]
     margin-right: 0;
   }
 
-  @media (width <= 474px) {
+  @media (width < $breakpoints-m) {
     margin-right: 6px;
 
     &:last-child {
