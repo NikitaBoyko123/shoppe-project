@@ -1,5 +1,6 @@
 @use "components/container";
 
 body {
+  overflow-x: hidden;
   font-family: $font-dm-sans;
 }
