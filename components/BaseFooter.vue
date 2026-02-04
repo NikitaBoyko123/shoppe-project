@@ -66,7 +66,7 @@ const handleSubmit = () => {
     setTimeout(() => {
       isSuccess.value = false;
     }, 3000);
-  } catch (err) {
+  } catch {
     error.value = "Failed to save email. Please try again.";
   }
 };

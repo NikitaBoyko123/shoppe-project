@@ -19,9 +19,19 @@ withDefaults(
   }>(),
   {
     type: "text",
+    placeholder: "",
     required: false,
     disabled: false,
+    autocomplete: "",
+    name: "",
+    id: "",
     readonly: false,
+    min: undefined,
+    max: undefined,
+    step: undefined,
+    pattern: "",
+    maxlength: undefined,
+    minlength: undefined,
     error: "",
   }
 );
