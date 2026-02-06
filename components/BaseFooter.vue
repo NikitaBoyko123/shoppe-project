@@ -3,7 +3,11 @@ import { ref } from "vue";
 import FacebookIcon from "@/assets/icons/facebook.svg?component";
 import InstagramIcon from "@/assets/icons/instagram.svg?component";
 import TwitterIcon from "@/assets/icons/twitter.svg?component";
+import FacebookIconMobile from "@/assets/icons/facebook_mobile.svg?component";
+import InstagramIconMobile from "@/assets/icons/instagram_mobile.svg?component";
+import TwitterIconMobile from "@/assets/icons/twitter_mobile.svg?component";
 import EnterIcon from "@/assets/icons/enter.svg?component";
+import EnterIconMobile from "@/assets/icons/enter_mobile.svg?component";
 
 const footerLinks = [
   { label: "CONTACT", to: "/" },
@@ -15,6 +19,12 @@ const socialIcons = [
   { component: FacebookIcon, ariaLabel: "Facebook", iconClass: "footer__social-icon--facebook" },
   { component: InstagramIcon, ariaLabel: "Instagram", iconClass: "footer__social-icon--instagram" },
   { component: TwitterIcon, ariaLabel: "Twitter", iconClass: "footer__social-icon--twitter" },
+];
+
+const socialIconsMobile = [
+  { component: FacebookIconMobile, ariaLabel: "Facebook", iconClass: "footer__social-icon--facebook" },
+  { component: InstagramIconMobile, ariaLabel: "Instagram", iconClass: "footer__social-icon--instagram" },
+  { component: TwitterIconMobile, ariaLabel: "Twitter", iconClass: "footer__social-icon--twitter" },
 ];
 
 const email = ref("");
@@ -86,6 +96,21 @@ const handleSubmit = () => {
             </li>
           </ul>
         </nav>
+        <div class="footer__social footer__social--mobile">
+          <p class="footer__social-title">Follow us</p>
+          <span class="footer__social-divider"></span>
+          <div class="footer__social-icons">
+            <BaseButton
+              v-for="icon in socialIconsMobile"
+              :key="icon.ariaLabel"
+              variant="ghost"
+              class="footer__social-button"
+              :aria-label="icon.ariaLabel"
+            >
+              <component :is="icon.component" :class="['footer__social-icon', icon.iconClass]" />
+            </BaseButton>
+          </div>
+        </div>
         <p class="footer__copyright">
           <span class="footer__copyright-bold">© 2021 Shelly.</span> Terms of
           use and <span class="footer__copyright-bold">and</span> privacy policy.
@@ -105,7 +130,8 @@ const handleSubmit = () => {
               />
             </div>
             <button type="submit" class="footer__newsletter-button">
-              <EnterIcon class="footer__newsletter-icon" />
+              <EnterIcon class="footer__newsletter-icon footer__newsletter-icon--desktop" />
+              <EnterIconMobile class="footer__newsletter-icon footer__newsletter-icon--mobile" />
             </button>
           </form>
           <label class="footer__terms-checkbox">
@@ -116,7 +142,7 @@ const handleSubmit = () => {
             Thank you! Your email has been saved.
           </p>
         </div>
-        <div class="footer__social">
+        <div class="footer__social footer__social--desktop">
           <p class="footer__social-title">Follow us</p>
           <div class="footer__social-icons">
             <BaseButton
@@ -154,6 +180,10 @@ const handleSubmit = () => {
     height: 1px;
     margin-bottom: 24px;
     background-color: $gray-300;
+
+    @media (width < $breakpoints-m) {
+      display: none;
+    }
 
     @media (min-width: $breakpoints-m) {
       margin-bottom: 32px;
@@ -197,7 +227,7 @@ const handleSubmit = () => {
     }
 
     @media (width < $breakpoints-m) {
-      margin-top: 0;
+      margin-top: -20px;
     }
   }
 
@@ -225,13 +255,19 @@ const handleSubmit = () => {
 
   &__nav-link {
     font-family: $font-dm-sans;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 27px;
-    color: $gray-700;
+    line-height: 20px;
+    color: $gray-600;
     letter-spacing: 0%;
     text-decoration: none;
     transition: opacity 0.2s;
+
+    @media (min-width: $breakpoints-m) {
+      font-size: 16px;
+      line-height: 27px;
+      color: $gray-700;
+    }
 
     &:hover {
       opacity: 0.7;
@@ -256,13 +292,18 @@ const handleSubmit = () => {
       margin-top: 24px;
       margin-bottom: 24px;
       font-size: 12px;
-      line-height: 18px;
+      line-height: 20px;
     }
   }
 
   &__copyright-bold {
     font-weight: 500;
     color: $color-black;
+
+    @media (width < $breakpoints-m) {
+      font-weight: 400;
+      color: $gray-600;
+    }
   }
 
   &__right {
@@ -281,11 +322,12 @@ const handleSubmit = () => {
     flex-direction: column;
     width: 100%;
     margin-top: 13px;
+    overflow: visible;
 
     @media (min-width: $breakpoints-m) {
       align-items: flex-end;
       width: auto;
-      margin-top: 5px;
+      margin-top: 6px;
     }
 
     @media (width < $breakpoints-m) {
@@ -298,7 +340,7 @@ const handleSubmit = () => {
     display: flex;
     gap: 8px;
     align-items: flex-start;
-    margin-top: 16px;
+    margin-top: 11px;
     cursor: pointer;
 
     @media (min-width: $breakpoints-m) {
@@ -308,21 +350,26 @@ const handleSubmit = () => {
 
   &__terms-input {
     flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    margin-top: 2px;
+    width: 13px;
+    height: 13px;
+    margin-top: 3.5px;
+    margin-left: -1px;
     cursor: pointer;
+    border: 1px solid $gray-600;
+    border-radius: 2px;
   }
 
   &__terms-text {
     font-family: $font-dm-sans;
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.5;
-    color: $gray-600;
+    line-height: 20px;
+    color: $color-black;
+    letter-spacing: 0%;
   }
 
   &__newsletter-form {
+    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
@@ -335,6 +382,7 @@ const handleSubmit = () => {
     }
 
     @media (width < $breakpoints-m) {
+      align-items: flex-end;
       max-width: 100%;
     }
   }
@@ -344,6 +392,7 @@ const handleSubmit = () => {
     flex: 1;
     align-items: center;
     min-width: 0;
+    overflow: visible;
     border-bottom: none;
   }
 
@@ -356,26 +405,49 @@ const handleSubmit = () => {
     }
 
     :deep(.base-input) {
-      padding: 8px 12px 13px 0;
+      padding: 8px 12px 6px 0;
+      margin-bottom: -15px;
       font-family: $font-dm-sans;
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 20px;
       color: $gray-700;
       background: transparent;
       border: none;
       border-radius: 0;
 
       @media (min-width: $breakpoints-m) {
+        padding: 8px 12px 13px 0;
+        margin-bottom: 0;
         font-size: 16px;
+        line-height: normal;
       }
 
       &::placeholder {
-        color: $gray-500;
+        font-family: $font-dm-sans;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        color: $gray-600;
+        letter-spacing: 0%;
       }
 
       &:focus {
         border: none;
         box-shadow: none;
       }
+    }
+
+    @media (min-width: $breakpoints-m) {
+      :deep(.base-input::placeholder) {
+        font-size: 16px;
+        line-height: normal;
+        color: $gray-500;
+      }
+    }
+
+    :deep(.base-input:focus) {
+      border: none;
+      box-shadow: none;
     }
 
     :deep(.base-input--error) {
@@ -393,26 +465,83 @@ const handleSubmit = () => {
   }
 
   &__newsletter-button {
+    position: relative;
     display: flex;
     flex-shrink: 0;
     align-items: center;
+    align-self: flex-end;
     justify-content: center;
+    width: auto;
+    height: auto;
     padding: 0;
+    margin-bottom: 0;
     margin-left: 8px;
     cursor: pointer;
     background: none;
     border: none;
+    transition: opacity 0.2s;
+
+    @media (width < $breakpoints-m) {
+      margin-bottom: 2px;
+    }
+
+    @media (min-width: $breakpoints-m) {
+      align-self: center;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      :deep(.footer__newsletter-icon) {
+        color: $color-black;
+        fill: $color-black;
+      }
+
+      :deep(.footer__newsletter-icon path) {
+        fill: $color-black;
+      }
+    }
   }
 
   &__newsletter-icon {
     display: block;
-    width: 20px;
-    height: 8px;
+    flex-shrink: 0;
+    margin-bottom: -6px;
     color: $gray-600;
+    fill: $gray-600;
 
-    @media (min-width: $breakpoints-m) {
+    &--desktop {
       width: 25px;
-      height: 8.74px;
+      height: 9px;
+
+      @media (width < $breakpoints-m) {
+        display: none;
+      }
+
+      :deep(svg) {
+        display: block;
+        width: 25px;
+        height: 9px;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      width: 15px;
+      height: 6px;
+
+      @media (width < $breakpoints-m) {
+        display: block;
+      }
+
+      :deep(svg) {
+        display: block;
+        width: 15px;
+        height: 6px;
+      }
+    }
+
+    :deep(path) {
+      fill: $gray-600;
     }
   }
 
@@ -441,11 +570,31 @@ const handleSubmit = () => {
     }
 
     @media (width < $breakpoints-m) {
-      flex-direction: column;
+      flex-direction: row;
       gap: 16px;
-      align-items: flex-start;
-      margin-top: 24px;
+      align-items: center;
+      margin-top: 36px;
       margin-bottom: 24px;
+    }
+
+    &--mobile {
+      display: none;
+
+      @media (width < $breakpoints-m) {
+        display: flex;
+        margin-top: 36px;
+        margin-bottom: 24px;
+      }
+    }
+
+    &--desktop {
+      @media (min-width: $breakpoints-m) {
+        margin-top: 50px;
+      }
+
+      @media (width < $breakpoints-m) {
+        display: none;
+      }
     }
   }
 
@@ -454,14 +603,27 @@ const handleSubmit = () => {
 
     @media (width < $breakpoints-m) {
       display: block;
-      padding-bottom: 8px;
       margin: 0;
+      margin-right: 8px;
       font-family: $font-dm-sans;
       font-size: 14px;
       font-weight: 400;
       line-height: 1.5;
       color: $gray-600;
-      border-bottom: 1px solid $gray-300;
+    }
+  }
+
+  &__social-divider {
+    display: none;
+
+    @media (width < $breakpoints-m) {
+      display: block;
+      align-self: center;
+      width: 47px;
+      height: 0;
+      margin-right: 8px;
+      margin-bottom: 0;
+      border-top: 1px solid $color-black;
     }
   }
 
@@ -471,7 +633,7 @@ const handleSubmit = () => {
     align-items: center;
 
     @media (width < $breakpoints-m) {
-      gap: 20px;
+      gap: 16px;
     }
   }
 
@@ -480,30 +642,84 @@ const handleSubmit = () => {
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
+    transition: opacity 0.2s;
+
+    &:hover {
+      :deep(.footer__social-icon) {
+        color: $color-black;
+        fill: $color-black;
+      }
+
+      :deep(.footer__social-icon path) {
+        fill: $color-black;
+      }
+    }
   }
 
   &__social-icon {
     display: block;
+    overflow: visible;
     color: $gray-600;
-    transition: opacity 0.2s;
-
-    &:hover {
-      opacity: 0.7;
-    }
+    transition: color 0.2s, fill 0.2s;
 
     &--facebook {
-      width: 10px;
-      height: 18px;
+      :deep(svg) {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      @media (min-width: $breakpoints-m) {
+        width: 10px;
+        height: 18px;
+      }
+    }
+
+    @media (min-width: $breakpoints-m) {
+      &--facebook :deep(svg) {
+        width: 10px;
+        height: 18px;
+      }
     }
 
     &--instagram {
-      width: 18px;
-      height: 18px;
+      :deep(svg) {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      @media (min-width: $breakpoints-m) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    @media (min-width: $breakpoints-m) {
+      &--instagram :deep(svg) {
+        width: 18px;
+        height: 18px;
+      }
     }
 
     &--twitter {
-      width: 20px;
-      height: 17px;
+      :deep(svg) {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      @media (min-width: $breakpoints-m) {
+        width: 20px;
+        height: 17px;
+      }
+    }
+
+    @media (min-width: $breakpoints-m) {
+      &--twitter :deep(svg) {
+        width: 20px;
+        height: 17px;
+      }
     }
   }
 }
