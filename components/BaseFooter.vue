@@ -289,7 +289,7 @@ const handleSubmit = () => {
     }
 
     @media (width < $breakpoints-m) {
-      margin-top: 24px;
+      margin-top: 14px;
       margin-bottom: 24px;
       font-size: 12px;
       line-height: 20px;
@@ -384,6 +384,7 @@ const handleSubmit = () => {
     @media (width < $breakpoints-m) {
       align-items: flex-end;
       max-width: 100%;
+      padding-bottom: 13px;
     }
   }
 
@@ -609,7 +610,7 @@ const handleSubmit = () => {
       font-size: 14px;
       font-weight: 400;
       line-height: 1.5;
-      color: $gray-600;
+      color: black;
     }
   }
 
@@ -621,8 +622,7 @@ const handleSubmit = () => {
       align-self: center;
       width: 47px;
       height: 0;
-      margin-right: 8px;
-      margin-bottom: 0;
+      margin: 8px -8px 0 -9px;
       border-top: 1px solid $color-black;
     }
   }
@@ -634,6 +634,7 @@ const handleSubmit = () => {
 
     @media (width < $breakpoints-m) {
       gap: 16px;
+      margin-top: 4px;
     }
   }
 
