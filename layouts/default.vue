@@ -4,6 +4,6 @@
     <div class="container">
       <slot />
     </div>
-    <footer class="footer" />
+    <BaseFooter />
   </div>
 </template>
